@@ -1,5 +1,3 @@
-import PyPDF2
-import sys
 import tkinter as tk
 from tkinter import ttk
 from controller.pdf_combiner import pdf_combiner
@@ -25,7 +23,8 @@ name_entry.focus()
 buttons = ttk.Frame(root, padding=(20, 10))
 buttons.pack(fill="both")
 
-greet_button = ttk.Button(buttons, text="Greet", command=lambda: greet(user_name.get()))
+greet_button = ttk.Button(buttons, text="Greet",
+                          command=lambda: greet(user_name.get()))
 greet_button.pack(side="left", fill="x", expand=True)
 quit_button = ttk.Button(buttons, text="Quit", command=root.destroy)
 quit_button.pack(side="right", fill="x", expand=True)
