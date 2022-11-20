@@ -28,13 +28,13 @@ def pdf_combiner(pdf_list: List[Path], output_file: Path = Path('out.pdf')) -> N
         raise FileExistsError(
             f"Can't create the {output_file} output file. It already exists.")
 
-    merger = PyPDF2.PdfFileMerger()
+    merger = PyPDF2.PdfMerger()
     for pdf in pdf_list:
         print(pdf)
         merger.append(pdf)
 
-    # merger.write(output_file)
-    # merger.close()
+    merger.write(output_file)
+    merger.close()
 
 
 if __name__ == '__main__':
