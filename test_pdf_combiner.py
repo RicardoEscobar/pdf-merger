@@ -37,6 +37,10 @@ class TestPdfCombiner(unittest.TestCase):
         self.assertRaises(TypeError, pdf_combiner,
                           test_list_of_paths_param, test_output_file_param)
 
+    def tearDown(self) -> None:
+        Path('merge.pdf').unlink(missing_ok=True)
+        Path('out.pdf').unlink(missing_ok=True)
+
 
 if __name__ == '__main__':
     unittest.main()
