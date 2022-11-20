@@ -30,7 +30,6 @@ def pdf_combiner(pdf_list: List[Path], output_file: Path = Path('out.pdf')) -> N
 
     merger = PyPDF2.PdfMerger()
     for pdf in pdf_list:
-        print(pdf)
         merger.append(pdf)
 
     merger.write(output_file)
