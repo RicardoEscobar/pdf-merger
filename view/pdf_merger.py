@@ -8,5 +8,3 @@ class PdfMerger(tk.Tk):
         super().__init__()
 
         self.title("PDF Merger")
-
-        ttk.Label(self, text="Hello, World!").pack()
