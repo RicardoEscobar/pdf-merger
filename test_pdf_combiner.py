@@ -10,20 +10,17 @@ class TestPdfCombiner(unittest.TestCase):
     def setUp(self) -> None:
         self.list_of_pdf_files = list(Path('.').glob('**/*.pdf'))
 
-    def test_pdf_list_param_is_a_list_of_paths(self):
-        """Test that validates that the List of paths given to the pdf_combiner function is actually
-        a list of pathlib.Paths objects"""
-        test_tuple_of_paths_param = tuple(self.list_of_pdf_files)
+    def test_pdf_list_param_is_a_collection_of_paths(self):
+        """Validates that a list or a tuple of paths(pathlib.Paths) are given to the pdf_combiner function."""
 
         test_list_of_paths_param = list(
             map(lambda file: file.name if file.name == 'twopage.pdf' else file,
                 self.list_of_pdf_files))
 
-        self.assertRaises(TypeError, pdf_combiner, test_tuple_of_paths_param)
         self.assertRaises(TypeError, pdf_combiner, test_list_of_paths_param)
 
     def test_output_file_param_is_a_path(self):
-        """Test that validates that the output_file parameter is actually a pathlib.Path object."""
+        """Validates that the output_file parameter is actually a pathlib.Path object."""
         test_output_file_param = 'merge.pdf'
 
         self.assertRaises(TypeError, pdf_combiner,
