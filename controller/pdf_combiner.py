@@ -38,7 +38,8 @@ def pdf_combiner(pdf_list: List[Path], output_file: Path = Path('out.pdf')) -> N
 
 if __name__ == '__main__':
     # Create a list of pdf files to merge.
-    path_to_pdf_files = Path(r'C:\Users\Jorge\git\pdf-merger')
+    path_to_pdf_files = Path('c:/').joinpath(
+        'Users', 'Jorge', 'git', 'pdf-merger')
 
     output_file_path = path_to_pdf_files / 'merged.pdf'
 
@@ -46,5 +47,5 @@ if __name__ == '__main__':
 
     try:
         pdf_combiner(pdf_list=list_of_pdf_files, output_file=output_file_path)
-    except FileExistsError as e:
+    except Exception as e:
         print(e)
