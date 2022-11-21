@@ -39,16 +39,4 @@ def pdf_combiner(pdf_collection: List[Path], output_file: Path = Path('out.pdf')
 
 
 if __name__ == '__main__':
-    # Create a list of pdf files to merge.
-    path_to_pdf_files = Path('c:/').joinpath(
-        'Users', 'Jorge', 'git', 'pdf-merger')
-
-    output_file_path = path_to_pdf_files / 'merged.pdf'
-
-    list_of_pdf_files = list(path_to_pdf_files.glob('**/*.pdf'))
-
-    try:
-        pdf_combiner(pdf_collection=list_of_pdf_files,
-                     output_file=output_file_path)
-    except Exception as e:
-        print(e)
+    pass
