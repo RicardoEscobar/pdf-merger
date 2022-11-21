@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
+from view.set_dpi_awareness import set_dpi_awareness
+
+set_dpi_awareness()
 
 
 class HelloWorld(tk.Tk):
