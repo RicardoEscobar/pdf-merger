@@ -15,14 +15,10 @@ class TestPdfCombiner(unittest.TestCase):
         """Validates that a list or a tuple of paths(pathlib.Paths) are given to the pdf_combiner function."""
 
         filename_str = str(self.list_of_pdf_files[0])
-        print(f'>> {type(filename_str)}: {filename_str}')
 
         test_list_of_paths_param = list(
             map(lambda file: file.name if file.name == filename_str else file,
                 self.list_of_pdf_files))
-
-        print(f'>> {type(self.list_of_pdf_files)}: {self.list_of_pdf_files}')
-        print(f'>> {type(test_list_of_paths_param)}: {test_list_of_paths_param}')
 
         self.assertRaises(TypeError, pdf_combiner, test_list_of_paths_param)
 
