@@ -37,7 +37,7 @@ class MainFrame(ttk.Frame):
         self.source_filenames = fd.askopenfilenames(
             title='Load PDF files',
             filetypes=self.filetypes,
-            defaultextension='pdf')
+            defaultextension='.pdf')
 
         if len(self.source_filenames) > 0:
             self.open_pdf_merge_file_dialog()
@@ -46,7 +46,7 @@ class MainFrame(ttk.Frame):
         self.merge_filename = Path(fd.asksaveasfilename(
             title='Save PDF merge as...',
             filetypes=self.filetypes,
-            defaultextension='pdf'))
+            defaultextension='.pdf'))
 
         pdf_combiner(str_to_path(self.source_filenames),
                      Path(self.merge_filename),
