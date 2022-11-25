@@ -1,4 +1,8 @@
 """2022-11-20 09:08:57"""
+import logging
+
+# create logger
+module_logger = logging.getLogger(__name__)
 
 
 def greet(user_name: str = None) -> str:
@@ -11,8 +15,10 @@ def greet(user_name: str = None) -> str:
         user_name = ''.join([user_name, '.'])
 
     if not isinstance(user_name, str):
+        module_logger.error("Parameter user_name, is not of type str (string)")
         raise TypeError("Parameter user_name, is not of type str (string)")
 
+    module_logger.debug("greet() function finished executing.")
     return f"Hello, {user_name}"
 
 
