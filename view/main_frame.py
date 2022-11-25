@@ -1,10 +1,9 @@
 """Main frame that shows the app to the user."""
-import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
+from pathlib import Path
 from controller.pdf_combiner import pdf_combiner
 from controller.str_to_path import str_to_path
-from pathlib import Path
 
 
 class MainFrame(ttk.Frame):
@@ -14,7 +13,6 @@ class MainFrame(ttk.Frame):
         """Init method modified to accomodate user_input."""
         super().__init__(container)
 
-        self.user_input = tk.StringVar()
         self.source_filenames = tuple()
         self.merge_filename = Path('merge.pdf')
         self.filetypes = (
@@ -28,10 +26,6 @@ class MainFrame(ttk.Frame):
 
         label.pack(side="left")
         button.pack(side="left")
-
-    def greet(self) -> None:
-        """Prints a customized greet to the console."""
-        print(f"Hello, {self.user_input.get()}!")
 
     def open_pdf_load_files_dialog(self) -> None:
         self.source_filenames = fd.askopenfilenames(
