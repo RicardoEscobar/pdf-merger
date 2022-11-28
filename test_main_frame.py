@@ -1,7 +1,5 @@
 """2022-11-21 13:12:14"""
 import unittest
-import tkinter as tk
-from tkinter import ttk
 from pathlib import Path
 import logging
 from view.main_frame import MainFrame
