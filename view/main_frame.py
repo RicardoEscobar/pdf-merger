@@ -45,10 +45,15 @@ class MainFrame(ttk.Frame):
         self.pdf_listbox.pack(side="top", fill='both', expand=True)
 
     def open_pdf_load_files_dialog(self) -> None:
-        self.source_filenames = self.source_filenames + fd.askopenfilenames(
+        tuple_selected_pdf_files = fd.askopenfilenames(
             title='Load PDF files',
             filetypes=self.filetypes,
             defaultextension='.pdf')
+
+        if tuple_selected_pdf_files == '':
+            tuple_selected_pdf_files = tuple()
+
+        self.source_filenames = self.source_filenames + tuple_selected_pdf_files
 
         # Updates listbox widget after opening file list
         self.pdf_listvar.set(self.source_filenames)
